@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Letra de canciones</title>
+		<link rel="icon" href="assets/lyrics-icon.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<div class="gradient">
+			<div class="container-form">
+				<div class="form-header">
+					<h1 class="form-header__title">
+						Busca la letra de la cancion
+					</h1>
+				</div>
+				<form action="" class="form" id="formulario">
+					<div class="form__campo">
+						<label for="artista" class="form__label">Artista</label>
+						<input
+							type="text"
+							name="artista"
+							id="artista"
+							class="form__input"
+							placeholder="Introduce el nombre del artista"
+							required
+						/>
+					</div>
+					<div class="form__campo">
+						<label for="cancion" class="form__label">Cancion</label>
+						<input
+							type="text"
+							name="cancion"
+							id="cancion"
+							class="form__input"
+							placeholder="Introduce el nombre de la cancion"
+							required
+						/>
+					</div>
+					<input
+						type="submit"
+						value="Buscar Letra"
+						class="form__submit"
+						required
+					/>
+				</form>
+			</div>
+			<main id="result" class="result"></main>
+		</div>
+
+		<template id="templateLyrics">
+			<div class="lyrics">
+				<div class="lyrics__header">
+					<h2 class="lyrics__title">
+						<span id="lyrics__song"></span> -
+						<span id="lyrics__author"></span>
+					</h2>
+				</div>
+				<div class="lyrics__div">
+					<p class="lyrics__letter" id="lyrics__letter"></p>
+				</div>
+			</div>
+		</template>
+
+		<template id="templateAlert">
+			<div class="alert" id="alert"></div>
+		</template>
+		<script src="js/lyrics.js" type="module"></script>
+	</body>
+</html>

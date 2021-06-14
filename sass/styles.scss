@@ -1,0 +1,140 @@
+:root {
+	--fuente: "Raleway", sans-serif;
+	--light-white: #ddd;
+	--blue: #125d98;
+	--light-blue: #3c8dad;
+	--orange: #f5a962;
+	--light-black: #777;
+}
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+html {
+	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	background-image: url(../assets/background-image.jpg);
+	font-family: var(--fuente);
+}
+/* no print */
+@media print {
+	body {
+		display: none !important;
+	}
+}
+/* no selection */
+body {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.alert {
+	@include center();
+	height: 48px;
+	background-color: rgb(255, 208, 208);
+	border: 1px solid rgb(223, 82, 82);
+	color: rgb(194, 50, 50);
+	font-size: 18px;
+	font-weight: 500;
+}
+.gradient {
+	background: linear-gradient(
+		90deg,
+		rgba(60, 141, 173, 0.8) 0%,
+		rgba(18, 93, 152, 0.8) 100%
+	);
+	width: 100%;
+	min-height: 100vh;
+}
+.container-form,
+.result {
+	max-width: 640px;
+	margin: 0 auto;
+	padding-top: 24px;
+	user-select: none;
+}
+.form-header,
+.lyrics__header {
+	background-color: #125d98;
+	height: 64px;
+	@include center();
+	text-align: center;
+	.form-header__title,
+	.lyrics__title {
+		color: var(--light-white);
+		font-size: 32px;
+		font-weight: 400;
+		user-select: none;
+	}
+	.lyrics__title > span {
+		text-transform: capitalize;
+	}
+}
+
+.form,
+.lyrics__div {
+	padding: 24px;
+	background-color: var(--light-white);
+	user-select: none;
+}
+.lyrics__div {
+	.lyrics__letter {
+		font-size: 18px;
+		line-height: 1.3;
+	}
+}
+.form__campo {
+	user-select: none;
+	margin-bottom: 16px;
+}
+.form__input {
+	display: block;
+}
+.form__label {
+	display: inline-block;
+	user-select: none;
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 3px;
+}
+.form__input {
+	width: 100%;
+	height: 48px;
+	padding: 8px 10px;
+	font-family: inherit;
+	border: 1px solid var(--light-black);
+	font-size: 18px;
+	border-radius: 5px;
+	background-color: #eee;
+}
+.form__input:focus {
+	outline: 1px solid #3c8dad;
+	border-radius: 0px;
+}
+.form__submit {
+	@include center();
+	width: 100%;
+	font-size: 18px;
+	height: 48px;
+	border: none;
+	font-family: inherit;
+	border-radius: 5px;
+	background-color: var(--light-blue);
+	color: white;
+}
+.form__submit:hover {
+	cursor: pointer;
+}
