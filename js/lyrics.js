@@ -27,8 +27,13 @@ const consultarAPI = (e) => {
 
 	const url = `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=${cancion}&q_artist=${artista}&apikey=3b75f22ef8940d19c4f29219e743a6c6`;
 
-	fetch(url)
+	const encodeURL = encodeURIComponent(url);
+
+	const allowOrigenURL = `https://api.allorigins.win/get?url=${encodeURL}`;
+
+	fetch(allowOrigenURL)
 		.then((res) => res.json())
+		.then((string) => JSON.parse(string.contents))
 		.then((datos) => {
 			limpiarHTML();
 			// Primero comprobamos si existe una coincidencia
